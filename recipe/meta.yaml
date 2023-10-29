@@ -17,7 +17,6 @@ requirements:
   build:
     - {{ compiler('c') }}
     - luarocks
-  host:
     - luajit-openresty
   run:
     - luajit-openresty
@@ -29,7 +28,6 @@ test:
 about:
   home: http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html
   license: MIT
-  license_family: MIT
   license_file: LICENSE
   summary: Parsing Expression Grammars For Lua
 
