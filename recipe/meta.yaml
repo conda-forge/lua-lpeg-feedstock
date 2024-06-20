@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://luarocks.org/manifests/gvvaughan/lpeg-{{ version }}-1.rockspec
-  sha256: 561694b668e7e8b736b86ddaa6788f89585025585de72fbb83aea90ac00d4e0d
+  url: http://www.inf.puc-rio.br/~roberto/lpeg/lpeg-{{ version }}.tar.gz
+  sha256: 4b155d67d2246c1ffa7ad7bc466c1ea899bbc40fef0257cc9c03cecbaed4352a
 
 build:
   number: 0
@@ -16,14 +16,14 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - luarocks
     - luajit-openresty
+    - make
   run:
     - luajit-openresty
 
 test:
   commands:
-    - luajit -e "require 'lpeg'"
+    - luajit ${PREFIX}/share/lua/5.1/test.lua
 
 about:
   home: http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html
