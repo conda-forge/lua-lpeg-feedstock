@@ -10,7 +10,7 @@ source:
   sha256: 4b155d67d2246c1ffa7ad7bc466c1ea899bbc40fef0257cc9c03cecbaed4352a
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win]
 
 requirements:
@@ -35,3 +35,4 @@ about:
 extra:
   recipe-maintainers:
     - danielnachun
+    - anjos
