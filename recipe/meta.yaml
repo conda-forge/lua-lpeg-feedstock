@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: http://www.inf.puc-rio.br/~roberto/lpeg/lpeg-{{ version }}.tar.gz
+  url: https://www.inf.puc-rio.br/~roberto/lpeg/lpeg-{{ version }}.tar.gz
   sha256: 4b155d67d2246c1ffa7ad7bc466c1ea899bbc40fef0257cc9c03cecbaed4352a
 
 build:
@@ -18,7 +18,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib('c') }}
+    # - {{ stdlib('c') }}
     - luajit-openresty
     - make
   run:
