@@ -17,7 +17,6 @@ source:
 
 build:
   number: 2
-  - ${{ pin_subpackage('lua-lpeg', upper_bound='x.x') }}
 
 requirements:
   build:
@@ -30,7 +29,7 @@ requirements:
     - luajit-openresty
   run:
     - luajit-openresty
-  run_exports: run_exports
+  run_exports: ${{ pin_subpackage('lua-lpeg', upper_bound='x.x') }}
 
 tests:
   - script:
