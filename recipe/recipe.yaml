@@ -38,9 +38,9 @@ tests:
       lib: lpeg
       files:
         - if: linux
-          then: lib/libjpeg.so
+          then: lib/liblpeg.so
         - if: osx
-          then: lib/libjpeg.dylib
+          then: lib/liblpeg.dylib
         - if: unix
           then:
             - lib/liblpeg.a
