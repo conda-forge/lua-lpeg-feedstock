@@ -37,9 +37,12 @@ tests:
   - package_contents:
       lib: lpeg
       files:
+        - if: linux
+          then: lib/libjpeg.so
+        - if: osx
+          then: lib/libjpeg.dylib
         - if: unix
           then:
-            - lib/liblpeg${SHLIB_EXT}
             - lib/liblpeg.a
             - share/lua/5.1/re.lua
             - share/lua/5.1/test.lua
