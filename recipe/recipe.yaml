@@ -1,9 +1,8 @@
 context:
-  name: lua-lpeg
   version: '1.1.0'
 
 package:
-  name: ${{ name }}
+  name: lua-lpeg
   version: ${{ version }}
 
 source:
@@ -16,7 +15,7 @@ source:
   - path: CMakeLists.txt
 
 build:
-  number: 3
+  number: 4
 
 requirements:
   build:
@@ -39,23 +38,19 @@ tests:
       lib: lpeg
       files:
         - if: linux
-          then:
-          - lib/liblpeg.so
-          - lib/liblpeg.a
-          - share/lua/5.1/re.lua
-          - share/lua/5.1/test.lua
+          then: lib/liblpeg.so
         - if: osx
+          then: lib/liblpeg.dylib
+        - if: unix
           then:
-          - lib/liblpeg.dylib
-          - lib/liblpeg.a
-          - share/lua/5.1/re.lua
-          - share/lua/5.1/test.lua
-        - if: win
-          then:
-          - Library/lib/lpeg.lib
-          - Library/bin/lpeg.dll
-          - Library/share/lua/5.1/re.lua
-          - Library/share/lua/5.1/test.lua
+            - lib/liblpeg.a
+            - share/lua/5.1/re.lua
+            - share/lua/5.1/test.lua
+          else:
+            - Library/lib/lpeg.lib
+            - Library/bin/lpeg.dll
+            - Library/share/lua/5.1/re.lua
+            - Library/share/lua/5.1/test.lua
 
 about:
   homepage: http://www.inf.puc-rio.br/~roberto/lpeg/lpeg.html
