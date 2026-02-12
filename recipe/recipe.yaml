@@ -15,7 +15,7 @@ source:
   - path: CMakeLists.txt
 
 build:
-  number: 4
+  number: 5
 
 requirements:
   build:
@@ -28,14 +28,16 @@ requirements:
     - luajit-openresty
   run:
     - luajit-openresty
-  run_exports: ${{ pin_subpackage('lua-lpeg', upper_bound='x.x') }}
+  run_exports:
+    - ${{ pin_subpackage('lua-lpeg', upper_bound='x.x') }}
 
 tests:
   - script:
       - if: unix
         then: luajit ${PREFIX}/share/lua/5.1/test.lua
   - package_contents:
-      lib: lpeg
+      lib:
+        - lpeg
       files:
         - if: linux
           then: lib/liblpeg.so
