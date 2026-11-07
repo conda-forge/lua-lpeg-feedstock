@@ -15,7 +15,7 @@ source:
   - path: CMakeLists.txt
 
 build:
-  number: 5
+  number: 6
 
 requirements:
   build:
@@ -23,7 +23,7 @@ requirements:
     - ${{ stdlib('c') }}
     - cmake
     - make
-    - pkg-config
+    - pkgconf
   host:
     - luajit-openresty
   run:
